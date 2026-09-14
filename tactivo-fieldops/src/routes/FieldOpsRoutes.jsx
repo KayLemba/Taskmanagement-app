@@ -44,7 +44,7 @@ function TechnicianAssignment({ data, userId }) { const person = userById(data, 
 function ProfileAvatar({ user, className = "" }) { return <span className={`profile-avatar ${className}`}>{user?.profilePicture ? <img src={user.profilePicture} alt={`${user.name} profile`} /> : initials(user?.name)}</span>; }
 function statusTone(status) { return ({ Open: "red", Triaged: "amber", Assigned: "purple", Scheduled: "purple", "In progress": "blue", Completed: "green", Active: "green", Attention: "amber", Offline: "red" })[status] || "gray"; }
 
-export default function App() {
+export default function FieldOpsRoutes() {
   const [data, setData] = useState(readWorkspace);
   const [sessionId, setSessionId] = useState(() => typeof window === "undefined" ? "" : window.sessionStorage.getItem("tactivo-session") || "");
   const [hydrated, setHydrated] = useState(false);
